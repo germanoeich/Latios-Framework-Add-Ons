@@ -20,7 +20,7 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [
-        "LATIOS_ADDONS_CYLINE"
+        "LATIOS_ADDON_CYLINE"
     ],
     "versionDefines": [],
     "noEngineReferences": false

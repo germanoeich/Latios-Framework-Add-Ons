@@ -43,7 +43,7 @@ depends on.
 
 Your add-on folder should exclusively be composed of C\# files, assembly
 definitions and references, and anything else that ties into the compilation.
-Assets such as prefabs, Scriptable Objects, mesh, materials, or shaders should
+Assets such as prefabs, Scriptable Objects, meshes, materials, or shaders should
 not be included. If you need these, it is best to create a sample or an editor
 tool to inject them into a user’s project. If you create a sample, please modify
 the repository root’s package.json to include it.
@@ -69,6 +69,14 @@ component’s presentation name. This should include the name of the add-on, as
 only the presentation name will be shown in search results. A good way to do
 this is to put the add-on name in parenthesis as a suffix like this: `“Latios/My
 Cool Add-On/My Authoring (My Cool Add-On)”`.
+
+### Incomplete Add-Ons
+
+Your add-on does not need to be functional when you first attempt to add it. As
+long as it is inert, and the README documents its incomplete status, you can
+still push it out to the public. You may wish to do this to make it easier for
+others to collaborate and contribute and help get the add-on across the finish
+line.
 
 ## Licensing your Add-On
 
@@ -104,15 +112,15 @@ The final step is to commit your changes and create a pull request. While you
 can request for a review over your code if you like, the main purpose of the
 pull request review and feedback will be to ensure your add-on conforms to the
 inert-by-default rule, and that there is sufficient documentation for a user to
-get started. Your pull request will not be accepted until it adheres to these
-two things.
+get started (or specify it is still incomplete). Your pull request will not be
+accepted until it adheres to these two things.
 
 Once your pull request is accepted, others may start using the add-on, and may
-report bugs or other issues. Others may want to try and improve it with their
-own pull request. You will automatically be assigned all things related to the
+report bugs or other issues. Others may also try and improve it with their own
+pull request. You will automatically be assigned all things related to the
 add-on and may be directly notified of them through one channel or another. For
 any pull request that involves changes to the add-on, you must approve the
-changes before they pull request will be accepted. If you are not responsive to
+changes before the pull request will be accepted. If you are not responsive to
 any of these things after 30 days, the add-on will be assumed abandoned, and
 then anyone is allowed to make changes without your approval.
 

@@ -30,3 +30,24 @@ consult the add-on’s documentation for further usage.
 This package is designed to be more friendly to contributors than the Latios
 Framework itself. Consult the *\~Contributors Documentation\~* folder to learn
 how to contribute your own add-ons or improve existing add-ons.
+
+## Add-Ons Directory
+
+### Physics
+
+-   Anna – A rigid body physics engine focused on ease-of-use
+
+### Animation
+
+-   Mecanim V1 – The original Mecanim runtime implementation that used to be in
+    the Mimic module
+-   Mecanim V2 – A new Mecanim runtime implementation that aims to fix
+    deep-rooted issues in V1 (still under construction)
+-   KAG50 – An animation state machine and graph implementation that was
+    originally written for Entities 0.50
+
+### Rendering and Visual Effects
+
+-   Cyline – A simple 3D Line Renderer
+-   Shuriken – A recreation of Unity’s particle system in pure ECS (still under
+    construction)

@@ -29,7 +29,7 @@ namespace Latios.Cyline.Systems
             latiosWorld = state.GetLatiosWorldUnmanaged();
             var fluent  = state.Fluent().With<UniqueMeshConfig, RenderBounds>(false).With<UniqueMeshPosition, UniqueMeshNormal, UniqueMeshIndex>(false)
                           .With<LineRenderer3DPoint>(true);
-            if ((state.World.Flags & WorldFlags.Editor) == WorldFlags.Editor)
+            if ((state.WorldUnmanaged.Flags & WorldFlags.Editor) == WorldFlags.Editor)
                 fluent = fluent.With<LineRenderer3DConfig>(false);
             else
                 fluent = fluent.WithEnabled<LineRenderer3DConfig>(false);
