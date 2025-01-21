@@ -22,7 +22,9 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "LATIOS_ADDON_KAG50"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }
