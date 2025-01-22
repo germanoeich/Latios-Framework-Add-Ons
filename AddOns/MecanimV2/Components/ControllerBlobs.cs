@@ -33,19 +33,19 @@ namespace Latios.MecanimV2
             }
             
             // Calculates the number of ints needed in the packedTypes blob array to represent all the parameter types
-            public static int PackedTypesArrayLength(int parametersCount)
+            internal static int PackedTypesArrayLength(int parametersCount)
             {
                 return (parametersCount + 15) >> 4;
             }
             
             // Packs a UnityEngine.AnimatorControllerParameterType as 2 bits in the right position of a packedTypes blob array builder
-            public static void PackTypeIntoBlobBuilder(ref BlobBuilderArray<int> packedTypesBlobBuilderArray, int parameterIndex, AnimatorControllerParameterType parameterType)
+            internal static void PackTypeIntoBlobBuilder(ref BlobBuilderArray<int> packedTypesBlobBuilderArray, int parameterIndex, AnimatorControllerParameterType parameterType)
             {
                 Bits.SetBits(ref packedTypesBlobBuilderArray[parameterIndex >> 4], (parameterIndex & 0xf) << 1, 2, (byte) FromAnimatorParameterType(parameterType));
             }
             
             // Maps Unity animator parameter types to our ParameterTypes.Type enum values.
-            public static Type FromAnimatorParameterType(AnimatorControllerParameterType unityType) {
+            private static Type FromAnimatorParameterType(AnimatorControllerParameterType unityType) {
                 switch (unityType)
                 {
                     case AnimatorControllerParameterType.Bool: return Type.Bool;
