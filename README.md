@@ -1,4 +1,4 @@
-# Latios Framework Add-Ons
+# Latios Framework Add-Ons [0.2.1]
 
 This is an extra Unity package for the Latios Framework containing various
 add-on modules and functionality.
@@ -51,3 +51,8 @@ how to contribute your own add-ons or improve existing add-ons.
 -   Cyline – A simple 3D Line Renderer
 -   Shuriken – A recreation of Unity’s particle system in pure ECS (still under
     construction)
+
+## Special Thanks To These Awesome Contributors
+
+-   Sovogal – Primary author of Mecanim V1
+-   Alemnunez – Fix for broken inert rule in KAG50
