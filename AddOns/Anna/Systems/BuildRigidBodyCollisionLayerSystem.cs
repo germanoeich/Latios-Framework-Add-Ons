@@ -347,7 +347,7 @@ namespace Latios.Anna.Systems
                                                                                                               bucketIndex,
                                                                                                               false,
                                                                                                               out var pair);
-                                pair.userByte     = SolveByteCodes.rotationConstraint2;
+                                pair.userByte     = SolveByteCodes.rotationConstraint1;
                                 streamData.indexA = index;
                                 streamData.indexB = -1;
                                 UnitySim.BuildJacobian(out streamData.parameters,

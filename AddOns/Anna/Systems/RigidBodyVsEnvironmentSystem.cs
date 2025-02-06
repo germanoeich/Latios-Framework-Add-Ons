@@ -5,8 +5,8 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
-
-using static Unity.Entities.SystemAPI;
+using UnityEngine;
+using Physics = Latios.Psyshock.Physics;
 
 namespace Latios.Anna.Systems
 {
@@ -38,8 +38,8 @@ namespace Latios.Anna.Systems
             {
                 states           = states,
                 pairStream       = pairStream.AsParallelWriter(),
-                deltaTime        = Time.DeltaTime,
-                inverseDeltaTime = math.rcp(Time.DeltaTime),
+                deltaTime        = SystemAPI.Time.DeltaTime,
+                inverseDeltaTime = math.rcp(SystemAPI.Time.DeltaTime),
             };
             state.Dependency = Physics.FindPairs(in rigidBodyLayer, in environmentLayer, in findBodyEnvironmentProcessor)
                                .ScheduleParallelUnsafe(state.Dependency);
@@ -63,6 +63,8 @@ namespace Latios.Anna.Systems
                 Physics.DistanceBetweenAll(result.colliderA, result.transformA, result.colliderB, result.transformB, maxDistance, ref distanceBetweenAllCache);
                 foreach (var distanceResult in distanceBetweenAllCache)
                 {
+                    // var prefix = distanceResult.distance > -1 ? "CONTACT - " : "";
+                    // Debug.Log($"{prefix}{PhysicsDebug.LogDistanceBetween(result.colliderA, result.transformA, result.colliderB, result.transformB, maxDistance).ToString()}");
                     var contacts = UnitySim.ContactsBetween(result.colliderA, result.transformA, result.colliderB, result.transformB, in distanceResult);
 
                     ref var streamData           = ref pairStream.AddPairAndGetRef<ContactStreamData>(result.pairStreamKey, true, false, out var pair);
